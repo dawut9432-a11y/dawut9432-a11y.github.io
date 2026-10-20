@@ -1,4 +1,4 @@
-const CACHE='sverka-v1';
+const CACHE='sverka-v2';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
 'https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js'];
 self.addEventListener('install',e=>{

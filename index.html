@@ -192,7 +192,7 @@ $('exp').addEventListener('click',async()=>{
       row.getCell(5).dataValidation={type:'list',allowBlank:false,formulae:[`"${OKT},${NOT}"`]};
       const id=wb.addImage({base64:p.src,extension:'jpeg'});
       const sc=Math.min(165/p.w,135/p.h),w=p.w*sc,h=p.h*sc,cw=27*7+5,rh=112*4/3;
-      ws.addImage(id,{tl:{col:1+(cw-w)/2/cw,row:r-1+(rh-h)/2/rh},ext:{width:w,height:h},editAs:'oneCell'});
+      const c0=1+(cw-w)/2/cw,r0=r-1+(rh-h)/2/rh;ws.addImage(id,{tl:{col:c0,row:r0},br:{col:c0+w/cw,row:r0+h/rh},editAs:'oneCell'});
     });
     ws.addConditionalFormatting({ref:`A${R0}:E${R1}`,rules:[{type:'expression',priority:1,formulae:[`$E${R0}="${OKT}"`],
       style:{font:{bold:true,color:{argb:'FF0E7A50'}},fill:{type:'pattern',pattern:'solid',bgColor:{argb:'FFDDF3E6'}}}}]});
